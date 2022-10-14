@@ -1,0 +1,57 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "IGDA_Map1.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "IGDA_Map1.tmx": {
+            "scale": 3.4771484375,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 51.335168230073585,
+                "y": 73.47975060383082
+            }
+        },
+        "TESTMap.tmx": {
+            "scale": 1.5959,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 233.41061470016916,
+                "y": 239.6766714706435
+            }
+        },
+        "TESTTileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 2.75
+        }
+    },
+    "last.imagePath": "/Users/ben/Documents/Repos/Unity3D/TurnBasedStrategyCourse/IGDA Development/Assets/SuperTiled2Unity/Import",
+    "map.height": 16,
+    "map.lastUsedFormat": "tmx",
+    "map.renderOrder": null,
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 16,
+    "openFiles": [
+        "TESTMap.tmx",
+        "TESTTileset.tsx",
+        "IGDA_Map1.tmx"
+    ],
+    "project": "TiledProject.tiled-project",
+    "recentFiles": [
+        "TESTMap.tmx",
+        "TESTTileset.tsx",
+        "IGDA_Map1.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    },
+    "tileset.transparentColor": "#000000",
+    "tileset.useTransparentColor": true
+}
