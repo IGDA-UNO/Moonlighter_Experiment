@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 214287780}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -473,7 +473,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 3
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -857,11 +857,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8699445243127910291, guid: c5c523fd4a914426aa2fc60efb5d48a9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.52514434
+      value: -0.37
       objectReference: {fileID: 0}
     - target: {fileID: 8699445243127910291, guid: c5c523fd4a914426aa2fc60efb5d48a9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.17647
+      value: -4.44
       objectReference: {fileID: 0}
     - target: {fileID: 8699445243127910291, guid: c5c523fd4a914426aa2fc60efb5d48a9, type: 3}
       propertyPath: m_LocalPosition.z

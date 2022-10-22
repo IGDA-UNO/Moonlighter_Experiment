@@ -54,6 +54,11 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(AttackCoroutine());
         }
 
+        //RIP player
+        if (health == 0) {
+            Destroy(gameObject);
+        }
+
     }
 
     IEnumerator AttackCoroutine(){

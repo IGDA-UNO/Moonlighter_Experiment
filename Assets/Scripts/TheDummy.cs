@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class TheDummy : Enemy
 {
-
     public int dummyPoints;
+
+    //public int attackDamage;
+    public int playerhealth;
 
     public float chaseRadius;
     public float attackRadius;
@@ -19,14 +21,37 @@ public class TheDummy : Enemy
     void Start()
     {
         attackTarget = GameObject.FindGameObjectWithTag("Player").transform;
+        playerhealth = GetComponent<PlayerController>().health;
         myRigidBody = GetComponent<Rigidbody2D>();
+        attackDamage = 50;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         DistanceCheck();
+        
+
+     
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+            if (other.gameObject.tag =="Player")
+            {
+            //change health of player 
+            playerhealth = playerhealth - attackDamage ;
+            }
+
+            else
+            {
+                //player health stays the same 
+                playerhealth = playerhealth;
+            }
+
+    }
+    
+
 
     //check the distance between this Dummy and the player.
     void DistanceCheck(){
@@ -36,4 +61,6 @@ public class TheDummy : Enemy
             myRigidBody.MovePosition(newLocation);
         }
     }
+
+   
 }
