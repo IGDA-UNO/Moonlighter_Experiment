@@ -343,7 +343,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.019141376, y: -0.75800073}
@@ -1178,6 +1178,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8077340817152843315, guid: c5c523fd4a914426aa2fc60efb5d48a9, type: 3}
+      propertyPath: attackTarget
+      value: 
+      objectReference: {fileID: 214287778}
     - target: {fileID: 3421979750297735952, guid: c5c523fd4a914426aa2fc60efb5d48a9, type: 3}
       propertyPath: m_Name
       value: Monster
