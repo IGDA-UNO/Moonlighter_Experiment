@@ -14,7 +14,7 @@ public class TheDummy : Enemy
 
     public PlayerController attackTarget;
 
-    private Rigidbody2D myRigidBody;
+    private Rigidbody2D myRigidBody {getMyRigidBody;set;};
 
 
     // Start is called before the first frame update
