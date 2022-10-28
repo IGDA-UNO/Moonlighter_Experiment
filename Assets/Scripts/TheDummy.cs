@@ -12,7 +12,7 @@ public class TheDummy : Enemy
     public float chaseRadius;
     public float attackRadius;
 
-    public Transform attackTarget;
+    public PlayerController attackTarget;
 
     private Rigidbody2D myRigidBody;
 
@@ -20,8 +20,8 @@ public class TheDummy : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        attackTarget = GameObject.FindGameObjectWithTag("Player").transform;
-        playerhealth = GetComponent<PlayerController>().health;
+        attackTarget = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        playerhealth = attackTarget.getHealth();
         myRigidBody = GetComponent<Rigidbody2D>();
         attackDamage = 50;
     }
@@ -37,10 +37,13 @@ public class TheDummy : Enemy
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("A collision occured.");
             if (other.gameObject.tag =="Player")
             {
             //change health of player 
-            playerhealth = playerhealth - attackDamage ;
+            playerhealth = playerhealth - attackDamage;
+            Debug.Log("The player has less health.");
+            attackTarget.setHealth(playerhealth);
             }
 
             else
@@ -55,9 +58,9 @@ public class TheDummy : Enemy
 
     //check the distance between this Dummy and the player.
     void DistanceCheck(){
-        float distance = Vector3.Distance(this.transform.position, attackTarget.position);
+        float distance = Vector3.Distance(this.transform.position, attackTarget.transform.position);
         if(distance < chaseRadius){
-            Vector3 newLocation = Vector3.MoveTowards(this.transform.position, attackTarget.position, moveSpeed * Time.deltaTime);
+            Vector3 newLocation = Vector3.MoveTowards(this.transform.position, attackTarget.transform.position, moveSpeed * Time.deltaTime);
             myRigidBody.MovePosition(newLocation);
         }
     }

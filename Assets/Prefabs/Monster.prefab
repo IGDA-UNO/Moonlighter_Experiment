@@ -95,7 +95,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3421979750297735952}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -151,6 +151,7 @@ MonoBehaviour:
   moveSpeed: 1
   attackDamage: 1
   dummyPoints: 1
+  playerhealth: 0
   chaseRadius: 4
   attackRadius: 1
   attackTarget: {fileID: 0}

@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(transform.position);
         maxHealth = 100;
         health = maxHealth;
         myRigidBody = GetComponent<Rigidbody2D>();
@@ -55,7 +56,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //RIP player
-        if (health == 0) {
+        if (health <= 0) {
             Destroy(gameObject);
         }
 
@@ -66,5 +67,13 @@ public class PlayerController : MonoBehaviour
         myAnimator.SetBool("isAttacking", true);
         yield return null;
         myAnimator.SetBool("isAttacking", false);
+    }
+
+    public int getHealth(){
+        return this.health;
+    }
+
+    public void setHealth(int health){
+        this.health = health;
     }
 }
