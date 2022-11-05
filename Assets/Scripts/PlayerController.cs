@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     public int gold;
     public int health;
     public int maxHealth;
@@ -18,11 +17,16 @@ public class PlayerController : MonoBehaviour
     Vector3 movementChange = new Vector3();
 
     // Start is called before the first frame update
+    void Awake()
+    {
+        maxHealth = 100;
+        health = maxHealth;
+    }
+
     void Start()
     {
         Debug.Log(transform.position);
-        maxHealth = 100;
-        health = maxHealth;
+        
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         playerSpeed = 10f;
@@ -55,10 +59,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(AttackCoroutine());
         }
 
-        //RIP player
-        if (health <= 0) {
-            Destroy(gameObject);
-        }
+        killPlayer();
 
     }
 
@@ -74,6 +75,16 @@ public class PlayerController : MonoBehaviour
     }
 
     public void setHealth(int health){
+        Debug.Log("Health: " + health);
         this.health = health;
+    }
+
+    public void killPlayer()
+    {   //RIP player
+        if (health <= 0)
+        {
+            Debug.Log("Health: " + health);
+            Destroy(gameObject);
+        }
     }
 }

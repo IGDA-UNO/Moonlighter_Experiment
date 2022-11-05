@@ -14,7 +14,7 @@ public class TheDummy : Enemy
 
     public PlayerController attackTarget;
 
-    private Rigidbody2D myRigidBody {getMyRigidBody;set;};
+    private Rigidbody2D myRigidBody; //{getMyRigidBody;set;};
 
 
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class TheDummy : Enemy
         attackTarget = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         playerhealth = attackTarget.getHealth();
         myRigidBody = GetComponent<Rigidbody2D>();
-        attackDamage = 50;
+        attackDamage = 5;
     }
 
     // Update is called once per frame
