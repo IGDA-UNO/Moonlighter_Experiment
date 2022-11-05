@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4402415122612881791}
+  - component: {fileID: 1305038373152692315}
   m_Layer: 0
   m_Name: MapRig
   m_TagString: Untagged
@@ -32,6 +33,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1305038373152692315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4402415122612881760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e27417f6b046ae40857fc460c3576aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p_room: {fileID: -1701369467706034761, guid: 607e56267ffc145f0a0121d9ce654b2c, type: 3}
+  height: 16
+  width: 16
+  roomType: 0
+  hasRightExit: 1
+  hasLeftExit: 1
+  hasTopExit: 1
+  hasBottomExit: 1
+  rightRoom: {fileID: 0}
+  leftRoom: {fileID: 0}
+  topRoom: {fileID: 0}
+  bottomRoom: {fileID: 0}
 --- !u!1001 &4402415123534865332
 PrefabInstance:
   m_ObjectHideFlags: 0

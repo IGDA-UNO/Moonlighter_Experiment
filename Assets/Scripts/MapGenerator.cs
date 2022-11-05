@@ -6,10 +6,13 @@ public class MapGenerator : MonoBehaviour
 {
     // public variables
     public Transform startLocation;
+    [Range(0,100)]
+    public int minRooms;
+    [Range(0,100)]
+    public int maxRooms;
 
     // private variables
     private List<GameObject> spawnedRooms;
-    private int count;
     // Map prefabs
     public List<GameObject> dungeonPrefabs;
     public List<GameObject> townPrefabs;
@@ -21,37 +24,7 @@ public class MapGenerator : MonoBehaviour
     void Start()
     {
         spawnedRooms = new List<GameObject>();
-        count = 0;
-        GameObject temp = dungeonPrefabs[0];
-        spawnedRooms.Add(Instantiate(temp, startLocation.position, Quaternion.identity));
-        for(int i = 0; i < 4; i++)
-        {
-            if(i % 2 == 0)
-            {
-                if(i == 0)
-                {
-                    spawnedRooms.Add(Instantiate(temp, startLocation.position + new Vector3(16, 0, 0), Quaternion.Euler(0f, 0f, (float) i*90))); //Quaternion.Euler(0f, (float) i*90, 0f)
-                }
-                else
-                {
-                    spawnedRooms.Add(Instantiate(temp, startLocation.position + new Vector3(-16, 0, 0), Quaternion.Euler(0f, 0f, (float) i*90))); //Quaternion.Euler(0f, (float) i*90, 0f)
-                }
-                
-            }
-            else
-            {
-                if(i == 1)
-                {
-                    spawnedRooms.Add(Instantiate(temp, startLocation.position + new Vector3(0, 16, 0), Quaternion.Euler(0f, 0f, (float) i*90))); //Quaternion.Euler(0f, (float) i*90, 0f)
-                }
-                else
-                {
-                    spawnedRooms.Add(Instantiate(temp, startLocation.position + new Vector3(0, -16, 0), Quaternion.Euler(0f, 0f, (float) i*90))); //Quaternion.Euler(0f, (float) i*90, 0f)
-                }
-            }
-            
-        }
-        
+        SpawnDungeon(minRooms, maxRooms);
     }
 
     // Update is called once per frame
@@ -67,5 +40,78 @@ public class MapGenerator : MonoBehaviour
             count++;
         } */
         
+    }
+
+    // end 
+    public void SpawnDungeon(int minRooms, int maxRooms)
+    {
+        GameObject temp = dungeonPrefabs[0]; // get starting room prefab
+        spawnedRooms.Add(Instantiate(temp, startLocation.position, Quaternion.identity)); // spawn starting room at starting location
+        int roomNums = Random.Range(minRooms, maxRooms + 1);
+        for(int i = 0; i < roomNums; i++)
+        {
+            bool isValid = false;
+            while (!isValid)
+            {
+                // select a room to add the new room to
+                GameObject r = spawnedRooms[Random.Range(0, spawnedRooms.Count)];
+                DungeonRoom dr = r.GetComponent<DungeonRoom>();
+                int direction = Random.Range(0,5); // choose a random direction
+                Vector3 pos = Vector3.zero;
+                switch (direction)
+                {
+                    case 0:
+                        pos = r.transform.position + new Vector3(dr.width, 0, 0);
+                        if(!doesOverlap(pos)) // check if the new position overlaps an existing position
+                        {
+                            // spawn right room and add it to the list of rooms
+                            spawnedRooms.Add(Instantiate(temp, pos, Quaternion.identity));
+                            isValid = true;
+                        }
+                        break;
+                    case 1:
+                        pos = r.transform.position + new Vector3(-dr.width, 0, 0);
+                        if(!doesOverlap(pos)) // check if the new position overlaps an existing position
+                        {
+                            // spawn left room and add it to the list of rooms
+                            spawnedRooms.Add(Instantiate(temp, pos, Quaternion.identity));
+                            isValid = true;
+                        }
+                        break;
+                    case 2:
+                        pos = r.transform.position + new Vector3(0, dr.height, 0);
+                        if(!doesOverlap(pos)) // check if the new position overlaps an existing position
+                        {
+                            // spawn top room and add it to the list of rooms
+                            spawnedRooms.Add(Instantiate(temp, pos, Quaternion.identity));
+                            isValid = true;
+                        }
+                        break;
+                    case 3:
+                        pos = r.transform.position + new Vector3(0, -dr.height, 0);
+                        if(!doesOverlap(pos)) // check if the new position overlaps an existing position
+                        {
+                            // spawn bottom room and add it to the list of rooms
+                            spawnedRooms.Add(Instantiate(temp, pos, Quaternion.identity));
+                            isValid = true;
+                        }
+                        break;
+                    
+                }
+            }
+        }    
+    }
+
+    public bool doesOverlap(Vector3 p) // check if the given transform overlaps any existing transforms
+    {
+        foreach(GameObject o in spawnedRooms)
+        {
+            if(Vector3.Distance(p, o.transform.position) < 0.1f)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

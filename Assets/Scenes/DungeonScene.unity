@@ -179,6 +179,14 @@ PrefabInstance:
       value: MapController
       objectReference: {fileID: 0}
     - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
+      propertyPath: maxRooms
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
+      propertyPath: minRooms
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
       propertyPath: startLocation
       value: 
       objectReference: {fileID: 1812476983}
