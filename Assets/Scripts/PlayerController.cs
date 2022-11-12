@@ -24,9 +24,8 @@ public class PlayerController : MonoBehaviour
     }
 
     void Start()
-    {
-        Debug.Log(transform.position);
-        
+    {   Debug.Log(transform.position);
+       
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         playerSpeed = 10f;
@@ -59,8 +58,8 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(AttackCoroutine());
         }
 
-        killPlayer();
 
+        killPlayer();
     }
 
     IEnumerator AttackCoroutine(){

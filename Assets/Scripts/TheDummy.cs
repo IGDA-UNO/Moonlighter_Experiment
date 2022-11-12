@@ -23,7 +23,7 @@ public class TheDummy : Enemy
         attackTarget = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         playerhealth = attackTarget.getHealth();
         myRigidBody = GetComponent<Rigidbody2D>();
-        attackDamage = 5;
+        attackDamage = 50;
     }
 
     // Update is called once per frame
