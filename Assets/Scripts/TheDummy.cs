@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class TheDummy : Enemy
 {
@@ -10,11 +11,14 @@ public class TheDummy : Enemy
     public Transform attackTarget;
 
     private Rigidbody2D myRigidBody;
-
+    private NavMeshAgent agent;
 
     // Start is called before the first frame update
     void Start()
     {
+         agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
         attackTarget = GameObject.FindGameObjectWithTag("Player").transform;
         myRigidBody = GetComponent<Rigidbody2D>();
     }
@@ -28,9 +32,12 @@ public class TheDummy : Enemy
     //check the distance between this Dummy and the player.
     void DistanceCheck(){
         float distance = Vector3.Distance(this.transform.position, attackTarget.position);
-        if(distance > 1.75f && distance < chaseRadius){
-            Vector3 newLocation = Vector3.MoveTowards(this.transform.position, attackTarget.position, moveSpeed * Time.deltaTime);
-            myRigidBody.MovePosition(newLocation);
+
+        if(distance < chaseRadius){
+            //Vector3 newLocation = Vector3.MoveTowards(this.transform.position, attackTarget.position, moveSpeed * Time.deltaTime);
+            //myRigidBody.MovePosition(newLocation);
+            agent.SetDestination(attackTarget.position);
+
         }
     }
 }
