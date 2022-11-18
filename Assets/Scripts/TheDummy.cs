@@ -13,6 +13,17 @@ public class TheDummy : Enemy
     private Rigidbody2D myRigidBody;
     private NavMeshAgent agent;
 
+    //public int attackDamage;
+    public int playerhealth;
+
+    public float chaseRadius;
+    public float attackRadius;
+
+    public PlayerController attackTarget;
+
+    private Rigidbody2D myRigidBody; //{getMyRigidBody;set;};
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,14 +31,41 @@ public class TheDummy : Enemy
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         attackTarget = GameObject.FindGameObjectWithTag("Player").transform;
+        attackTarget = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        playerhealth = attackTarget.getHealth();
         myRigidBody = GetComponent<Rigidbody2D>();
+        attackDamage = 50;
     }
 
     // FixedUpdate is called once per frame
     void FixedUpdate()
     {
         DistanceCheck();
+        
+
+     
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("A collision occured.");
+            if (other.gameObject.tag =="Player")
+            {
+            //change health of player 
+            playerhealth = playerhealth - attackDamage;
+            Debug.Log("The player has less health.");
+            attackTarget.setHealth(playerhealth);
+            }
+
+            else
+            {
+                //player health stays the same 
+                playerhealth = playerhealth;
+            }
+
+    }
+    
+
 
     //check the distance between this Dummy and the player.
     void DistanceCheck(){
@@ -40,4 +78,6 @@ public class TheDummy : Enemy
 
         }
     }
+
+   
 }
