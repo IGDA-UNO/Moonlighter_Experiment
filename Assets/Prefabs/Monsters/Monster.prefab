@@ -152,7 +152,7 @@ MonoBehaviour:
   moveSpeed: 0.5
   attackDamage: 1
   dummyPoints: 1
-  chaseRadius: 4
+  chaseRadius: 10
   attackRadius: 1
   attackTarget: {fileID: 0}
 --- !u!195 &7766625339735284406
