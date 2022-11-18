@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class TheDummy : Enemy
 {
-
     public int dummyPoints;
-
     public float chaseRadius;
     public float attackRadius;
-
     public Transform attackTarget;
 
     private Rigidbody2D myRigidBody;
@@ -22,7 +19,7 @@ public class TheDummy : Enemy
         myRigidBody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+    // FixedUpdate is called once per frame
     void FixedUpdate()
     {
         DistanceCheck();
@@ -31,7 +28,7 @@ public class TheDummy : Enemy
     //check the distance between this Dummy and the player.
     void DistanceCheck(){
         float distance = Vector3.Distance(this.transform.position, attackTarget.position);
-        if(distance < chaseRadius){
+        if(distance > 1.75f && distance < chaseRadius){
             Vector3 newLocation = Vector3.MoveTowards(this.transform.position, attackTarget.position, moveSpeed * Time.deltaTime);
             myRigidBody.MovePosition(newLocation);
         }
