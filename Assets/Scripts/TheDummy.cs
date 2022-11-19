@@ -8,31 +8,20 @@ public class TheDummy : Enemy
     public int dummyPoints;
     public float chaseRadius;
     public float attackRadius;
+    public int playerhealth;
     public Transform attackTarget;
 
     private Rigidbody2D myRigidBody;
     private NavMeshAgent agent;
 
-    //public int attackDamage;
-    public int playerhealth;
-
-    public float chaseRadius;
-    public float attackRadius;
-
-    public PlayerController attackTarget;
-
-    private Rigidbody2D myRigidBody; //{getMyRigidBody;set;};
-
-
     // Start is called before the first frame update
     void Start()
     {
-         agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         attackTarget = GameObject.FindGameObjectWithTag("Player").transform;
-        attackTarget = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        playerhealth = attackTarget.getHealth();
+        playerhealth = attackTarget.GetComponent<PlayerController>().getHealth();
         myRigidBody = GetComponent<Rigidbody2D>();
         attackDamage = 50;
     }
@@ -54,7 +43,7 @@ public class TheDummy : Enemy
             //change health of player 
             playerhealth = playerhealth - attackDamage;
             Debug.Log("The player has less health.");
-            attackTarget.setHealth(playerhealth);
+            attackTarget.GetComponent<PlayerController>().setHealth(playerhealth);
             }
 
             else
