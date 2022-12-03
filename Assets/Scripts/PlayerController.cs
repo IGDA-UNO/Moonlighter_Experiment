@@ -86,4 +86,10 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void TakeDamage(int amount)
+    {
+        this.health -= amount;
+        Debug.Log($"I have taken {amount} damage!");
+    }
 }

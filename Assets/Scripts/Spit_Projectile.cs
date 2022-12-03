@@ -22,6 +22,7 @@ public class Spit_Projectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.tag == "Player" ){
             Debug.Log("Player hit");
+            other.GetComponent<PlayerController>().TakeDamage(10);
             Destroy(this.gameObject);
         }
     }

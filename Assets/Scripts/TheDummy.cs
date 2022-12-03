@@ -40,18 +40,11 @@ public class TheDummy : Enemy
         Debug.Log("A collision occured.");
             if (other.gameObject.tag =="Player")
             {
-            //change health of player 
-            playerhealth = playerhealth - attackDamage;
-            Debug.Log("The player has less health.");
-            attackTarget.GetComponent<PlayerController>().setHealth(playerhealth);
+                //change health of player 
+                playerhealth = playerhealth - attackDamage;
+                Debug.Log("The player has less health.");
+                attackTarget.GetComponent<PlayerController>().setHealth(playerhealth);
             }
-
-            else
-            {
-                //player health stays the same 
-                playerhealth = playerhealth;
-            }
-
     }
     
 

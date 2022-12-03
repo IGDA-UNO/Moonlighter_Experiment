@@ -12,16 +12,16 @@ public class HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        maxHealth = 100;
         attackTarget = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         playerhealth = attackTarget.getHealth();
+        maxHealth = attackTarget.maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
         playerhealth = attackTarget.getHealth();
+        maxHealth = attackTarget.maxHealth;
         healthFill();
     }
 
