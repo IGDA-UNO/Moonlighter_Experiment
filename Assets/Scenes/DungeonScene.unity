@@ -180,11 +180,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
       propertyPath: maxRooms
-      value: 36
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
       propertyPath: minRooms
-      value: 24
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
       propertyPath: startLocation
@@ -192,20 +192,68 @@ PrefabInstance:
       objectReference: {fileID: 1812476983}
     - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
       propertyPath: dungeonPrefabs.Array.size
-      value: 3
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
       propertyPath: dungeonPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 4402415122612881760, guid: 15c080c7b85d9084b9ac8069465aaf80, type: 3}
+      objectReference: {fileID: 4402415122612881760, guid: 4c408b33cddc8bd41a1cbee3b1d96f5c, type: 3}
     - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
       propertyPath: dungeonPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 4402415122612881760, guid: 15c080c7b85d9084b9ac8069465aaf80, type: 3}
+      objectReference: {fileID: 4402415122612881760, guid: 3bc95815463addb43aea2d18cb0eedea, type: 3}
     - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
       propertyPath: dungeonPrefabs.Array.data[2]
       value: 
-      objectReference: {fileID: 4402415122612881760, guid: 15c080c7b85d9084b9ac8069465aaf80, type: 3}
+      objectReference: {fileID: 4402415122612881760, guid: 4f3751e198d09c14e82122b536717eb7, type: 3}
+    - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
+      propertyPath: dungeonPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 4402415122612881760, guid: 000d4f8f55659344ea47aa96c69d0421, type: 3}
+    - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
+      propertyPath: dungeonPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 4402415122612881760, guid: c27bbd4174e58c04d8d4dbdab31edc15, type: 3}
+    - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
+      propertyPath: dungeonPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 4402415122612881760, guid: d695c9f1322e76f4ea0f7cef1c1a630c, type: 3}
+    - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
+      propertyPath: dungeonPrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 4402415122612881760, guid: 895272c1a01f29e45acf933d584bc567, type: 3}
+    - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
+      propertyPath: dungeonPrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 4402415122612881760, guid: 14d76e075ff430c4794b90eed551a9e0, type: 3}
+    - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
+      propertyPath: dungeonPrefabs.Array.data[8]
+      value: 
+      objectReference: {fileID: 4402415122612881760, guid: 67dd6218f62539341af48d8e762fdb14, type: 3}
+    - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
+      propertyPath: dungeonPrefabs.Array.data[9]
+      value: 
+      objectReference: {fileID: 4402415122612881760, guid: 3fdfa9eb42f59e042855544a03503021, type: 3}
+    - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
+      propertyPath: dungeonPrefabs.Array.data[10]
+      value: 
+      objectReference: {fileID: 4402415122612881760, guid: e58b9e691ed38554f8c96c9b7156e3f7, type: 3}
+    - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
+      propertyPath: dungeonPrefabs.Array.data[11]
+      value: 
+      objectReference: {fileID: 4402415122612881760, guid: db6c2016104dc6c40acc7147c49dc757, type: 3}
+    - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
+      propertyPath: dungeonPrefabs.Array.data[12]
+      value: 
+      objectReference: {fileID: 4402415122612881760, guid: 8a3593af01b5eb34c9ba6e5bee23eeb3, type: 3}
+    - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
+      propertyPath: dungeonPrefabs.Array.data[13]
+      value: 
+      objectReference: {fileID: 4402415122612881760, guid: f78cc706483b4c748866d6a7755398d7, type: 3}
+    - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
+      propertyPath: dungeonPrefabs.Array.data[14]
+      value: 
+      objectReference: {fileID: 4402415122612881760, guid: ef4163a3c8c06c04eab5d749928168c3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
 --- !u!1 &1812476982

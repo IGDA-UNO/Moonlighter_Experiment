@@ -15,6 +15,7 @@ public class DungeonRoom : MonoBehaviour
     public bool hasLeftExit;
     public bool hasTopExit;
     public bool hasBottomExit;
+    
     /* 
     [HideInInspector]
     public DungeonRoom rightRoom;
@@ -38,4 +39,32 @@ public class DungeonRoom : MonoBehaviour
     {
         
     }
+
+    public void AddExit(string side)
+    {
+        switch (side)
+        {
+            case "left":
+                hasLeftExit = false;
+                break;
+            case "right":
+                hasRightExit = false;
+                break;
+            case "top":
+                hasTopExit = false;
+                break;
+            case "bottom":
+                hasBottomExit = false;
+                break;
+        }
+    }
+
+    public bool isFull()
+    {
+        if (hasLeftExit || hasRightExit || hasTopExit || hasBottomExit)
+        {
+            return false;
+        }
+        return true;
+    } 
 }
