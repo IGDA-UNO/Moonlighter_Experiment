@@ -180,11 +180,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
       propertyPath: maxRooms
-      value: 10
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
       propertyPath: minRooms
-      value: 7
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
       propertyPath: startLocation
