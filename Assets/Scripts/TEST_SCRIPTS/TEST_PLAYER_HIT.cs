@@ -16,6 +16,7 @@ public class TEST_PLAYER_HIT : MonoBehaviour
         
     }
 
+    //SHOVEL HITS THINGS
     void OnTriggerEnter2D(Collider2D other){
         if(other.CompareTag("Breakable")){
             Debug.Log("Destroyed!");

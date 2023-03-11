@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //THIS IS THE UP TO DATE PLAYER SCRIPT
     public int gold;
     public int health;
     public int maxHealth;
