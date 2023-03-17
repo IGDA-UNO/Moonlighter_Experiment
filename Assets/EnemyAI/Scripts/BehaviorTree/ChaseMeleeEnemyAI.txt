@@ -1,0 +1,16 @@
+tree("Root")
+	fallback
+		tree("Move")
+		tree("Idle")
+
+tree("Move")
+	while PlayerIsFound
+		sequence
+			MoveToPlayer()
+
+tree("Idle")
+	while not PlayerIsFound
+		sequence
+			Idle()
+
+

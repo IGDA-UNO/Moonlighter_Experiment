@@ -1,0 +1,17 @@
+{
+    "name": "PandaBehaviour",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f93f511ab7a33f74283d7755f49144c7",
+        "GUID:2eff92e106631e145a4291c5fa13e90f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

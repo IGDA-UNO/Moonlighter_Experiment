@@ -1,0 +1,15 @@
+tree("Root")
+	fallback
+		tree("Shoot")
+		tree("Idle")
+
+tree("Shoot")
+	while PlayerIsFound
+		sequence
+			ShootAtPlayer()
+
+tree("Idle")
+	while not PlayerIsFound
+		sequence
+			Idle()
+

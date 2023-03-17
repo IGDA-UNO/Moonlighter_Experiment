@@ -1,0 +1,18 @@
+{
+    "name": "PandaBehaviourEditor",
+    "references": [
+        "GUID:1a2c68dd20b1dc148bdcdcbf3f3c9eda",
+        "GUID:b9aa07f4a063bc44092766daf6104c9a"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

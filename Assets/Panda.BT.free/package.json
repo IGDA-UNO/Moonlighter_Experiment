@@ -1,0 +1,48 @@
+{
+  "name": "com.pandabehaviour.panda-bt-free",
+  "version": "1.4.4",
+  "displayName": "Panda BT (Free)",
+  "description": "Behaviour tree scripting for Unity",
+  "unity": "2020.3",
+  "unityRelease": "",
+  "documentationUrl": "http://www.pandabehaviour.com/documentation",
+  "changelogUrl": "http://www.pandabehaviour.com/changelog",
+  "licensesUrl": "http://www.pandabehaviour.com/license",
+  "dependencies": {
+  },
+  "keywords": [
+    "behaviour tree",
+    "scripting",
+    "bt",
+    "AI"
+  ],
+  "author": {
+    "name": "Eric Begue",
+    "email": "ericbeg+pandabt@gmail.com",
+    "url": "http://www.pandabehaviour.com"
+  },
+  "samples": [
+    {
+      "displayName": "Change Color",
+      "description": "A cube displaying a sequence of color",
+      "path": "Samples/00_ChangeColor"
+    },
+    {
+      "displayName": "Move",
+      "description": "An object animated using two BT tree running in parallel",
+      "path": "Samples/01_Move"
+    },
+    {
+      "displayName": "Playtag",
+      "description": "An AI playing the child game 'Tag'",
+      "path": "Samples/02_PlayTag"
+    },
+    {
+      "displayName": "Shooter",
+      "description": "A shooting game with different advanced AIs",
+      "path": "Samples/03_Shooter"
+    }
+  ]
+}
+
+
