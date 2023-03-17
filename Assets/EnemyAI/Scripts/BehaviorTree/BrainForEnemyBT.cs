@@ -15,7 +15,10 @@ namespace Panda.Examples.BrainForEnemyBT
         public NavMeshAgent agent;
 
         private void Start() {
+            // attaches this enemy to the navmesh, makes it able to know where its going
             SetupNavMeshAgent();
+
+            // if there is no player target, get it
             if(PlayerTarget == null){
                 GameObject playergo = GameObject.FindGameObjectWithTag("Player");
                 PlayerTarget = playergo.transform;
@@ -29,6 +32,9 @@ namespace Panda.Examples.BrainForEnemyBT
             agent.updateUpAxis = false;
         }
 
+
+
+        // when called, wull return true if there is a player this enemy is hunting
         [Task]
         bool PlayerIsFound{
             get{
@@ -36,21 +42,21 @@ namespace Panda.Examples.BrainForEnemyBT
                 if(PlayerTarget != null){
                     return true;
                 }
-                // print("returning false for player is found");
                 return false;
             }
 
         }
 
         
+        // sets the destination for this navmesh agent to the player's position
         [Task]
         void MoveToPlayer(){
-            // print(" wuld be moving to player right now! ");
             
             agent.SetDestination(PlayerTarget.position);
         
         }
 
+        // do nothing, just print a statement
         [Task]
         void Idle(){
             print(" idling right now! ");
@@ -58,28 +64,29 @@ namespace Panda.Examples.BrainForEnemyBT
         }
 
         
+        // going to shoot a projectile
         [Task]
         void ShootAtPlayer(){
-            print(" idling right now! ");
+            print(" Trying to shoot at player! ");
 
         }
 
-        // void OnCollisionEnter2D(Collision2D coll){
-        //     // if colliding with player
-        //         // print
+        // will make the sprite blink quickly
+        [Task]
+        void BlinkSprite(){
+            print(" Trying to Blink this sprite! ");
 
-        //     // print(" enemy colliding with something! ");
+        }
 
-        //     if(coll.gameObject.tag == "Player"){
-        //         // print(" colliding with player! ");
-        //         coll.gameObject.GetComponent<PlayerDummy>().DeductHealth();
-        //         print(" about to add force ");
-        //         GetComponent<Rigidbody2D>().AddForce(new Vector2(-7, 2), ForceMode2D.Impulse);
-        //         print(" just complete adding to force ");
+        // destroys this object
+        [Task]
+        void Die(){
+            print(" Guess ill die! ");
+            Destroy(this.gameObject);
 
-        //     }
+        }
 
-        // }
+
 
 
 

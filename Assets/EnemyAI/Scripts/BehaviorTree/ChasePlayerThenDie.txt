@@ -1,0 +1,14 @@
+tree("Root")
+	fallback
+		tree("Move")
+		tree("Die")
+
+tree("Move")
+	while PlayerIsFound
+		sequence
+			MoveToPlayer()
+
+tree("Die")
+	while not PlayerIsFound
+		sequence
+			Die()
