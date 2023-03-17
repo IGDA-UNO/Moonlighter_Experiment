@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     public int health;
     public int maxHealth;
 
+    //Does the weapon need to be something you can specify here?
+    public PlayerHit currentWeapon; 
+
     private Rigidbody2D myRigidBody;
     private Animator myAnimator;
 
@@ -25,7 +28,8 @@ public class PlayerController : MonoBehaviour
     }
 
     void Start()
-    {   Debug.Log(transform.position);
+    {   
+        Debug.Log(transform.position);
        
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
@@ -59,11 +63,12 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(AttackCoroutine());
         }
 
-
-        killPlayer();
     }
 
+    //start the attack animation
     IEnumerator AttackCoroutine(){
+        //this animation activates hitboxes.
+        //see the player's animation.
         Debug.Log("attack!");
         myAnimator.SetBool("isAttacking", true);
         yield return null;
@@ -81,6 +86,9 @@ public class PlayerController : MonoBehaviour
 
     public void killPlayer()
     {   //RIP player
+        //the player being destroyed may be better managed elsewhere,
+        //especially outside the player.
+        //see the TakeDamage method.
         if (health <= 0)
         {
             Debug.Log("Health: " + health);
@@ -92,5 +100,18 @@ public class PlayerController : MonoBehaviour
     {
         this.health -= amount;
         Debug.Log($"I have taken {amount} damage!");
+
+        //should killPlayer be managed elsewhere?
+        killPlayer();
+    }
+
+    public void healAction(){
+        //it might be wise to tie this to some resource
+        int healingAmount = 10;
+
+        //instead of having a fixed amount, if for example it uses 
+        //an inventory system, maybe different healing potions
+        //may heal different amounts.
+        this.setHealth(healingAmount + this.getHealth());
     }
 }
