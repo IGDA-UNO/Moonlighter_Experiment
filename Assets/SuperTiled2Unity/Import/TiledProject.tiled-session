@@ -9,19 +9,19 @@
     ],
     "fileStates": {
         "IGDA_Map1.tmx": {
-            "scale": 3.4771484375,
+            "scale": 3,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 51.335168230073585,
-                "y": 73.47975060383082
+                "x": 148.66666666666663,
+                "y": 122.33333333333334
             }
         },
         "TESTMap.tmx": {
             "scale": 1.5959,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 233.41061470016916,
-                "y": 239.6766714706435
+                "x": 233.7239175386929,
+                "y": 239.98997430916722
             }
         },
         "TESTTileset.tsx": {
@@ -37,15 +37,13 @@
     "map.tileWidth": 16,
     "map.width": 16,
     "openFiles": [
-        "TESTMap.tmx",
-        "TESTTileset.tsx",
         "IGDA_Map1.tmx"
     ],
     "project": "TiledProject.tiled-project",
     "recentFiles": [
+        "IGDA_Map1.tmx",
         "TESTMap.tmx",
-        "TESTTileset.tsx",
-        "IGDA_Map1.tmx"
+        "TESTTileset.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

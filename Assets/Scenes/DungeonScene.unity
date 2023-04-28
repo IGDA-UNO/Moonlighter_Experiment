@@ -197,6 +197,7 @@ PrefabInstance:
     - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
       propertyPath: dungeonPrefabs.Array.data[0]
       value: 
+<<<<<<< Updated upstream
       objectReference: {fileID: 4402415122612881760, guid: 4c408b33cddc8bd41a1cbee3b1d96f5c, type: 3}
     - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
       propertyPath: dungeonPrefabs.Array.data[1]
@@ -254,6 +255,17 @@ PrefabInstance:
       propertyPath: dungeonPrefabs.Array.data[14]
       value: 
       objectReference: {fileID: 4402415122612881760, guid: ef4163a3c8c06c04eab5d749928168c3, type: 3}
+=======
+      objectReference: {fileID: 4402415122612881760, guid: 2c33efac087b0ab44b993fc43bdb2672, type: 3}
+    - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
+      propertyPath: dungeonPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 4402415122612881760, guid: 1944e22d95e3fdd4aadfbda88104b61e, type: 3}
+    - target: {fileID: 7364702827125209658, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
+      propertyPath: dungeonPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 4402415122612881760, guid: 92aa3fc78112ee54d86f38ea4a16ac6f, type: 3}
+>>>>>>> Stashed changes
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d23fb87a73b2f1b40b28e96240dfd037, type: 3}
 --- !u!1 &1812476982

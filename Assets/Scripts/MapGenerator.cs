@@ -45,6 +45,7 @@ public class MapGenerator : MonoBehaviour
     // end 
     public void SpawnDungeon(int minRooms, int maxRooms)
     {
+<<<<<<< Updated upstream
         GameObject temp = Instantiate(dungeonPrefabs[0], startLocation.position, Quaternion.identity);
         spawnedRooms.Add(temp.GetComponent<DungeonRoom>()); // spawn starting room at starting location
         int roomNums = Random.Range(minRooms, maxRooms + 1);
@@ -77,6 +78,64 @@ public class MapGenerator : MonoBehaviour
             else
             {
                 Debug.Log($"[MapGenerator] DungeonRoom ({dr.gameObject.transform.position.x/16}, {dr.gameObject.transform.position.y/16}) has [{dr.hasRightExit}, {dr.hasLeftExit}, {dr.hasTopExit}, {dr.hasBottomExit}], but they are blocked");
+=======
+        
+        spawnedRooms.Add(Instantiate(dungeonPrefabs[0], startLocation.position, Quaternion.identity)); // spawn starting room at starting location
+        int roomNums = Random.Range(minRooms, maxRooms + 1);
+        for(int i = 0; i < roomNums; i++)
+        {
+            
+            bool isValid = false;
+            while (!isValid)
+            {
+                // generate a random room prefab
+                GameObject temp = dungeonPrefabs[Random.Range(0,3)];
+                // select a room to add the new room to
+                GameObject r = spawnedRooms[Random.Range(0, spawnedRooms.Count)];
+                DungeonRoom dr = r.GetComponent<DungeonRoom>();
+                int direction = Random.Range(0,4); // choose a random direction
+                Vector3 pos = Vector3.zero;
+                switch (direction)
+                {
+                    case 0:
+                        pos = r.transform.position + new Vector3(dr.width, 0, 0);
+                        if(!doesOverlap(pos)) // check if the new position overlaps an existing position
+                        {
+                            // spawn right room and add it to the list of rooms
+                            spawnedRooms.Add(Instantiate(temp, pos, Quaternion.identity));
+                            isValid = true;
+                        }
+                        break;
+                    case 1:
+                        pos = r.transform.position + new Vector3(-dr.width, 0, 0);
+                        if(!doesOverlap(pos)) // check if the new position overlaps an existing position
+                        {
+                            // spawn left room and add it to the list of rooms
+                            spawnedRooms.Add(Instantiate(temp, pos, Quaternion.identity));
+                            isValid = true;
+                        }
+                        break;
+                    case 2:
+                        pos = r.transform.position + new Vector3(0, dr.height, 0);
+                        if(!doesOverlap(pos)) // check if the new position overlaps an existing position
+                        {
+                            // spawn top room and add it to the list of rooms
+                            spawnedRooms.Add(Instantiate(temp, pos, Quaternion.identity));
+                            isValid = true;
+                        }
+                        break;
+                    case 3:
+                        pos = r.transform.position + new Vector3(0, -dr.height, 0);
+                        if(!doesOverlap(pos)) // check if the new position overlaps an existing position
+                        {
+                            // spawn bottom room and add it to the list of rooms
+                            spawnedRooms.Add(Instantiate(temp, pos, Quaternion.identity));
+                            isValid = true;
+                        }
+                        break;
+                    
+                }
+>>>>>>> Stashed changes
             }
         }    
     }
