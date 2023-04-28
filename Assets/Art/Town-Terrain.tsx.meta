@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 guid: 4938e6d7a6c0b844e8aede15ef5736e8
-=======
-guid: b5d3eaae416c23842aafcc30d6f3d315
->>>>>>> Stashed changes
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -19,11 +15,7 @@ ScriptedImporter:
   missingLayers: []
   missingTags: []
   importerVersion: 13
-<<<<<<< Updated upstream
   pixelsPerUnit: 100
-=======
-  pixelsPerUnit: 16
->>>>>>> Stashed changes
   edgesPerEllipse: 32
   numberOfObjectsImported: 2051
   useSpriteAtlas: 1
