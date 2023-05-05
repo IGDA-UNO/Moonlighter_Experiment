@@ -9,7 +9,6 @@ using UnityEngine;
 
 public class inventoryManager : MonoBehaviour
 {
-
     /* Add item in inventory(list)
      * Play animation of item being collected
      * Count how many objects the player has
@@ -26,24 +25,19 @@ public class inventoryManager : MonoBehaviour
     //list called Inventory    == inventory slots
     private List<Collectable> Inventory = new List<Collectable>();
 
-  
-
-
     // Start is called before the first frame update
     void Start()
     {
        // isItCollected = collectable.isCollected;
-
     }
 
     // Update is called once per frame
     void Update()
     {
-    
-
 
     }
 
+    //add collectable to inventory 
    public void addToInventory(Collectable collectable)
     {
              Inventory.Add(collectable);

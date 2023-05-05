@@ -26,14 +26,13 @@ public class Collectable : MonoBehaviour
     {
        // hasBeenPickedUp = new ObjectAdded();
     }
-
     // Update is called once per frame
     void Update()
     {
 
     }
 
-
+    //when touching the item 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))

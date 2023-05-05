@@ -12,7 +12,7 @@ public class TheDummy : Enemy
     public Transform attackTarget;
 
     private Rigidbody2D myRigidBody;
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
 
     // Start is called before the first frame update
     void Start() { 
@@ -50,15 +50,16 @@ public class TheDummy : Enemy
 
 
     //check the distance between this Dummy and the player.
-    void DistanceCheck(){
+    public bool DistanceCheck(){
         float distance = Vector3.Distance(this.transform.position, attackTarget.position);
 
         if(distance < chaseRadius){
             //Vector3 newLocation = Vector3.MoveTowards(this.transform.position, attackTarget.position, moveSpeed * Time.deltaTime);
             //myRigidBody.MovePosition(newLocation);
             agent.SetDestination(attackTarget.position);
-
+            return true;
         }
+        return false;
     }
 
    

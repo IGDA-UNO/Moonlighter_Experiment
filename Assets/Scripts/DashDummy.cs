@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class DashDummy : TheDummy
 {
     public int mobstate;
-    private float transition;
+    public float transition ;
     public float dashtime=4.0f;
     private float decay =0;
     void Start()
@@ -21,7 +21,7 @@ public class DashDummy : TheDummy
 
     void Update()
     {
-        if(DistanceCheck()&&transition<dashtime){
+        if (DistanceCheck() && (transition <dashtime)){
             mobstate = 1;
             transition += Time.deltaTime;
         }
