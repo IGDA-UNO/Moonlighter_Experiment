@@ -15,8 +15,8 @@ public class TheDummy : Enemy
     private NavMeshAgent agent;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() { 
+    
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;

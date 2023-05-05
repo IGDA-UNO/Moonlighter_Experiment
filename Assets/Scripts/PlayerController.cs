@@ -92,5 +92,6 @@ public class PlayerController : MonoBehaviour
     {
         this.health -= amount;
         Debug.Log($"I have taken {amount} damage!");
+
     }
 }
