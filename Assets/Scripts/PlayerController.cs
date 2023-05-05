@@ -21,9 +21,8 @@ public class PlayerController : MonoBehaviour
     Vector3 movementChange = new Vector3();
 
     //Audio sources
-    
-    //public AudioSource swordSFX;
-    //public AudioSource walkSFX;
+    public AudioSource swordSFX;
+    public AudioSource walkSFX;
 
 
 
@@ -42,8 +41,10 @@ public class PlayerController : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         playerSpeed = 120f;
 
-        //swordSFX = GetComponent<AudioSource>();
-        //walkSFX = GetComponent<AudioSource>();
+        AudioSource[] audioArray = GetComponents<AudioSource>();
+        walkSFX = audioArray[0];
+        swordSFX = audioArray[1];
+        
 
     }
 
@@ -64,7 +65,7 @@ public class PlayerController : MonoBehaviour
             myRigidBody.MovePosition(
                 this.transform.position + (movementChange * playerSpeed * Time.deltaTime)
             );
-            //walkSFX.Play();
+            
         }
         else{
             myAnimator.SetBool("isMoving", false);
@@ -73,8 +74,6 @@ public class PlayerController : MonoBehaviour
         //handle player attacking
         if(Input.GetKeyDown(KeyCode.Space)){
             StartCoroutine(AttackCoroutine());
-            
-            //swordSFX.Play();
             
         }
 
@@ -130,6 +129,23 @@ public class PlayerController : MonoBehaviour
         //may heal different amounts.
         this.setHealth(healingAmount + this.getHealth());
 
+    }
+
+    //Start audio clip
+    public void startWalkAudio(){
+        walkSFX.Play();
+    }
+
+    public void startSwordAudio(){
+        swordSFX.Play();
+    }
+
+    public void stopWalkAudio(){
+        walkSFX.Stop();
+    }
+
+    public void stopSwordAudio(){
+        swordSFX.Stop();
     }
 
 }
