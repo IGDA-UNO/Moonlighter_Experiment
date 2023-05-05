@@ -116,6 +116,7 @@ public class PlayerController : MonoBehaviour
         this.health -= amount;
         Debug.Log($"I have taken {amount} damage!");
 
+
         //should killPlayer be managed elsewhere?
         killPlayer();
     }
@@ -128,6 +129,7 @@ public class PlayerController : MonoBehaviour
         //an inventory system, maybe different healing potions
         //may heal different amounts.
         this.setHealth(healingAmount + this.getHealth());
+
     }
 
 }

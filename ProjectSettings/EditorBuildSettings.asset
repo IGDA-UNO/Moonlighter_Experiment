@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main menu.unity
+    guid: 276cee2499d457841914f94f336a384e
+  - enabled: 1
     path: Assets/Scenes/Lenaoria & Christinas scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/DungeonScene.unity
+    guid: fad404a223b227248b14942c3c65570f
+  - enabled: 1
+    path: Assets/Scenes/MAPscene.unity
+    guid: 0c164a4275802c84a8748cd6a9edc428
   m_configObjects: {}
