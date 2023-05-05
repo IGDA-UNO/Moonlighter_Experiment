@@ -9,7 +9,9 @@ ScriptedImporter:
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 1fa25d03934ea624a82bf2fcee6f0873, type: 3}
   missingFiles: []
-  errors: []
+  errors:
+  - Errors detected in tileset '../../Art/Forest1.tsx'. Check the tileset inspector
+    for more details. Your map may be broken until these are fixed.
   warnings:
   - Pixels Per Unit mismatch between map (100) and tileset '../../Art/Forest1.tsx'
     (16)

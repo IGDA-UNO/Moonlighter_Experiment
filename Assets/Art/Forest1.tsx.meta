@@ -9,7 +9,10 @@ ScriptedImporter:
   assetBundleVariant: 
   script: {fileID: 11500000, guid: cc34d0f3dc257a442819830b408c5322, type: 3}
   missingFiles: []
-  errors: []
+  errors:
+  - Invalid rectangle (Tile ID ='0') in tileset 'Forest1' has zero width
+  - Invalid rectangle (Tile ID ='0') in tileset 'Forest1' has zero height
+  - Invalid rectangle (Tile ID ='911') in tileset 'Forest1' has zero width
   warnings: []
   missingSortingLayers: []
   missingLayers: []

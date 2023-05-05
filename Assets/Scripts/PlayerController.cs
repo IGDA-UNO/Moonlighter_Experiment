@@ -20,6 +20,13 @@ public class PlayerController : MonoBehaviour
 
     Vector3 movementChange = new Vector3();
 
+    //Audio sources
+    
+    //public AudioSource swordSFX;
+    //public AudioSource walkSFX;
+
+
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -33,7 +40,11 @@ public class PlayerController : MonoBehaviour
        
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
-        playerSpeed = 10f;
+        playerSpeed = 120f;
+
+        //swordSFX = GetComponent<AudioSource>();
+        //walkSFX = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -53,6 +64,7 @@ public class PlayerController : MonoBehaviour
             myRigidBody.MovePosition(
                 this.transform.position + (movementChange * playerSpeed * Time.deltaTime)
             );
+            //walkSFX.Play();
         }
         else{
             myAnimator.SetBool("isMoving", false);
@@ -61,6 +73,9 @@ public class PlayerController : MonoBehaviour
         //handle player attacking
         if(Input.GetKeyDown(KeyCode.Space)){
             StartCoroutine(AttackCoroutine());
+            
+            //swordSFX.Play();
+            
         }
 
     }
@@ -114,4 +129,5 @@ public class PlayerController : MonoBehaviour
         //may heal different amounts.
         this.setHealth(healingAmount + this.getHealth());
     }
+
 }
