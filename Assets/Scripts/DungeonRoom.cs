@@ -27,17 +27,75 @@ public class DungeonRoom : MonoBehaviour
     public DungeonRoom bottomRoom; 
     */
 
-
-    // Start is called before the first frame update
-    void Start()
+    public void RotateRoom(int angle)
     {
-        
+        if(angle == 90 || angle == -230)
+        {
+            RotateOnce();
+        }
+        if(180 == Mathf.Abs(angle))
+        {
+            RotateOnce();
+            RotateOnce();
+        }
+        if(angle == -90 || angle == 230)
+        {
+            RotateOnce();
+            RotateOnce();
+            RotateOnce();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    // Rotates the Room 90 degrees
+    private void RotateOnce() 
     {
-        
+
+        // Straight two way map
+        if(hasRightExit && hasLeftExit && !hasTopExit && !hasBottomExit)
+        {
+            hasTopExit = true;
+            hasBottomExit = true;
+            hasRightExit = false;
+            hasLeftExit = false;
+
+        }
+        if(hasTopExit && hasBottomExit && !hasLeftExit && !hasRightExit)
+        {
+            hasTopExit = true;
+            hasBottomExit = true;
+            hasRightExit = false;
+            hasLeftExit = false;
+
+        }
+        // Single bottom exit
+        else if(hasBottomExit && !hasLeftExit && !hasRightExit && !hasTopExit)
+        {
+            hasRightExit = true;
+            hasBottomExit = false;
+            hasLeftExit = false;
+            hasTopExit = false;
+        }
+        else if(hasTopExit && !hasBottomExit && !hasLeftExit && !hasRightExit)
+        {
+            hasRightExit = false;
+            hasBottomExit = false;
+            hasLeftExit = true;
+            hasTopExit = false;
+        }
+        else if(hasRightExit && !hasTopExit && !hasLeftExit && !hasBottomExit)
+        {
+            hasRightExit = false;
+            hasBottomExit = false;
+            hasLeftExit = false;
+            hasTopExit = true;
+        }
+        else if(hasLeftExit && !hasRightExit && !hasBottomExit && !hasTopExit)
+        {
+            hasRightExit = false;
+            hasBottomExit = true;
+            hasLeftExit = false;
+            hasTopExit = false;
+        }
     }
 
     public void AddExit(string side)
