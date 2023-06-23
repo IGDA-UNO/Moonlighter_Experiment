@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b563047dc8a5c5e45b8575e27c972391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainMenuUI: {fileID: 1880744069}
   StartButton:
     m_PersistentCalls:
       m_Calls:

@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Breakable
+  - item
   layers:
   - Default
   - TransparentFX
@@ -40,4 +42,49 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BelowGround
+    uniqueID: 2804838703
+    locked: 0
+  - name: Ground
+    uniqueID: 1177818051
+    locked: 0
+  - name: Underwater
+    uniqueID: 2277918515
+    locked: 0
+  - name: F_BG
+    uniqueID: 3629966333
+    locked: 0
+  - name: S_BG
+    uniqueID: 2737459559
+    locked: 0
+  - name: BG_HB
+    uniqueID: 2176763205
+    locked: 0
+  - name: BB
+    uniqueID: 3591515017
+    locked: 0
+  - name: F_FG
+    uniqueID: 1579786763
+    locked: 0
+  - name: S_FG
+    uniqueID: 2041834729
+    locked: 0
+  - name: G_Lock
+    uniqueID: 3505342085
+    locked: 0
+  - name: Images
+    uniqueID: 2425213725
+    locked: 0
+  - name: Player
+    uniqueID: 1321690659
+    locked: 0
+  - name: FG_2
+    uniqueID: 2088530045
+    locked: 0
+  - name: FG_1
+    uniqueID: 1903461699
+    locked: 0
+  - name: Collision
+    uniqueID: 1634005013
     locked: 0
