@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 65f467ccbf7fa406ba8febf7dd8b5e16
+guid: 14b879e8f12275447b38684f46ec24c1
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -12,9 +12,7 @@ ScriptedImporter:
   errors:
   - Errors detected in tileset '../../Art/Forest1.tsx'. Check the tileset inspector
     for more details. Your map may be broken until these are fixed.
-  warnings:
-  - Pixels Per Unit mismatch between map (16) and tileset '../../Art/Town-Terrain.tsx'
-    (100)
+  warnings: []
   missingSortingLayers: []
   missingLayers: []
   missingTags: []
