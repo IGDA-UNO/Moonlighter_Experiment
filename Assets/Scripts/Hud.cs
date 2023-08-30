@@ -21,7 +21,7 @@ public class Hud : MonoBehaviour
     [SerializeField] GameObject hudWindow;
     [SerializeField] GameObject eventSystem;
     [SerializeField] GameObject Player;
-
+    [SerializeField] GameObject CityMusic;
 
     Scene CurrentScene;
 
@@ -59,6 +59,7 @@ public class Hud : MonoBehaviour
     //gp to swamp button
     public void EnterSwamp()
     {
+        Destroy(CityMusic);
 
          CurrentScene = SceneManager.GetActiveScene();
         //open loading screen

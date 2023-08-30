@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
        
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
-        playerSpeed = 120f;
+        playerSpeed = 10f;
 
         AudioSource[] audioArray = GetComponents<AudioSource>();
         walkSFX = audioArray[0];
