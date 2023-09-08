@@ -11291,11 +11291,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3141624596238159474, guid: c082f8162a40d4f27ade408ec73e5e1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 45.61
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 3141624596238159474, guid: c082f8162a40d4f27ade408ec73e5e1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.88
+      value: -21.27
       objectReference: {fileID: 0}
     - target: {fileID: 3141624596238159474, guid: c082f8162a40d4f27ade408ec73e5e1b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11348,6 +11348,10 @@ PrefabInstance:
     - target: {fileID: 8318161168233828448, guid: c082f8162a40d4f27ade408ec73e5e1b, type: 3}
       propertyPath: Loop
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8318161168233828448, guid: c082f8162a40d4f27ade408ec73e5e1b, type: 3}
+      propertyPath: MinDistance
+      value: 1.6485004
       objectReference: {fileID: 0}
     - target: {fileID: 8318161168233828448, guid: c082f8162a40d4f27ade408ec73e5e1b, type: 3}
       propertyPath: OutputAudioMixerGroup
