@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2667907494503591016}
   - component: {fileID: 981578601}
   m_Layer: 0
-  m_Name: Spitter
+  m_Name: OldSpitter
   m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,10 +147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd0c354f4945bb642a362d72d059b61b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  monsterName: Spittah
-  moveSpeed: 2
-  attackDamage: 0
   SpitFacts: {fileID: 2672749447244945678, guid: 2f30a5c8dd957da4abc6513213abb348, type: 3}
   spitRate: 5
   chaseRadius: 5

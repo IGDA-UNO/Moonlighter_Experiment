@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class TheDummy : Enemy
+public class TheDummy : MonoBehaviour
 {
     public int dummyPoints;
     public float chaseRadius;
     public float attackRadius;
+    public int attackDamage;
     public int playerhealth;
     public Transform attackTarget;
 

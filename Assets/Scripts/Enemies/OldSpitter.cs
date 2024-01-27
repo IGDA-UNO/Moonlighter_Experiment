@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Spitter : Enemy
+public class OldSpitter : MonoBehaviour
 {   public GameObject SpitFacts;
     public float spitRate = 5.0f;
     private float spitTimers = 0.0f;
@@ -101,14 +101,11 @@ public class Spitter : Enemy
     void flee(){
             Vector3 localposition = transform.InverseTransformPoint(attackTarget.position);
             //Vector3 newLocation = Vector3.MoveTowards(Vector3.zero, localposition, moveSpeed * Time.deltaTime);
-            agent.SetDestination(transform.position+ localposition*-1);
+            agent.SetDestination(transform.position + localposition * -1);
             //Vector3 step = Vector3.MoveTowards(transform.position,agent.nextPosition, moveSpeed*Time.deltaTime);
             //ThisRigid.MovePosition(step);
-            
-            
-        
-        
     }
+
     public Quaternion computeAngle(){
          float angles = Mathf.Atan2(attackTarget.position.y - transform.position.y , attackTarget.position.x - transform.position.x) * 180/Mathf.PI;
         return Quaternion.Euler(0f,0f,angles);
