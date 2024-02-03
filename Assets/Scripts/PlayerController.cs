@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
        
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
-        playerSpeed = 75f;
+        //playerSpeed = 75f;
 
         AudioSource[] audioArray = GetComponents<AudioSource>();
         walkSFX = audioArray[0];
@@ -56,27 +56,28 @@ public class PlayerController : MonoBehaviour
         movementChange.x = Input.GetAxisRaw("Horizontal");
         movementChange.y = Input.GetAxisRaw("Vertical");
 
+        //handle player attacking
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(AttackCoroutine());
+        }
+    }
+
+    void FixedUpdate()
+    {
         //Debug.Log("xMovement is: " + movementChange.x);
     
-        if(movementChange != Vector3.zero){
+        if(movementChange != Vector3.zero)
+        {
             myAnimator.SetFloat("moveX", movementChange.x);
             myAnimator.SetFloat("moveY", movementChange.y);
             myAnimator.SetBool("isMoving", true);
-            myRigidBody.MovePosition(
-                this.transform.position + (movementChange * playerSpeed * Time.deltaTime)
-            );
-            
+            myRigidBody.MovePosition(transform.position + (movementChange * playerSpeed * Time.deltaTime));
         }
-        else{
+        else
+        {
             myAnimator.SetBool("isMoving", false);
         }
-
-        //handle player attacking
-        if(Input.GetKeyDown(KeyCode.Space)){
-            StartCoroutine(AttackCoroutine());
-            
-        }
-
     }
 
     //start the attack animation

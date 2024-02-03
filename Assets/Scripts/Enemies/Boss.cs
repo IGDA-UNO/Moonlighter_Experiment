@@ -18,4 +18,9 @@ public class Boss : Enemy
     {
         
     }
+
+    public override void DamagePlayer()
+    {
+        throw new System.NotImplementedException();
+    }
 }

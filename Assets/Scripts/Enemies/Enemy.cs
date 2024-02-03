@@ -13,7 +13,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField]
     protected string monsterName;
 
-    [SerializeField, Range(0, 200)]
+    [SerializeField, Range(0, 500)]
     protected int health;
 
     [SerializeField, Range(0f, 100f)]
@@ -28,17 +28,19 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField, Range(0, 100)]
     protected int attackDamage;
 
-    [SerializeField]
-    protected EnemyState state;
-
-    protected NavMeshAgent agent;
+    [Range(0f, 100f)]
+    public float attackRange;
     
 
     // Private
     [HideInInspector]
+    protected EnemyState state;
+    [HideInInspector]
     protected float attackCooldown;
     [HideInInspector]
     protected Rigidbody2D physics;
+    [HideInInspector]
+    protected Transform target;
     
  
     // Start is called before the first frame update
@@ -46,10 +48,6 @@ public abstract class Enemy : MonoBehaviour
     {
         attackCooldown = attackSpeed;
         physics = GetComponent<Rigidbody2D>();
-        agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-		agent.updateUpAxis = false;
-        agent.speed = walkSpeed;
     }
 
     // Update is called once per frame
@@ -84,9 +82,68 @@ public abstract class Enemy : MonoBehaviour
 
     public abstract void Attack();
 
+    public abstract void DamagePlayer();
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+    }
+
     public void ChangeState(EnemyState newState)
     {
         state = newState;
     }
+
+    protected void Move(Vector3 location, string type)
+    {
+        Vector3 step = Vector3.zero;
+        switch (type)
+        {
+            case "walk":
+                step = Vector3.MoveTowards(transform.position, location, walkSpeed * Time.fixedDeltaTime);
+                break;
+            case "run":
+                step = Vector3.MoveTowards(transform.position, location, runSpeed * Time.fixedDeltaTime);
+                break;
+        }
+        physics.MovePosition(step);
+    }
+
+    protected void MoveToAttackRange(string type)
+    {
+        if(Vector3.Distance(target.position, transform.position) > attackRange)
+        {
+            Move(target.position, type);
+        }
+    }
+
+    protected bool InAttackRange()
+    {
+        if(Vector3.Distance(transform.position, target.position) <= attackRange)
+        {
+            return true;
+        }
+        
+        return false;
+    }
+
     
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            target = other.transform;
+            Debug.Log("Player Detected");
+            ChangeState(EnemyState.ATTACK);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            target = null;
+            ChangeState(EnemyState.PATROL);
+        }
+    }
 }

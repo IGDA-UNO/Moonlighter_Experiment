@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Breakable
   - item
+  - Wall
   layers:
   - Default
   - TransparentFX

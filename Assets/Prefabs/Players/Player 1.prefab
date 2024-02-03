@@ -191,7 +191,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3141624596238159473}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -17.81, y: -19.63, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
@@ -242,9 +242,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1153622809
+  m_SortingLayerID: 1321690659
   m_SortingLayer: 12
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 648450618, guid: c73ebc6c0445f4b9dbdeb411da81adea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -292,7 +292,9 @@ MonoBehaviour:
   health: 0
   maxHealth: 0
   currentWeapon: {fileID: 0}
-  playerSpeed: 100
+  playerSpeed: 7
+  swordSFX: {fileID: 0}
+  walkSFX: {fileID: 0}
 --- !u!50 &3141624596238159477
 Rigidbody2D:
   serializedVersion: 4

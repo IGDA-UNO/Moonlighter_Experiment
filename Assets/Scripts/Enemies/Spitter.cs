@@ -9,19 +9,15 @@ public class Spitter : Enemy
     [Range(0f, 100f)]
     public float fleeRange;
 
-    [Range(0f, 100f)]
-    public float attackRange;
-
     public GameObject projectilePrefab;
-
-    private Transform target;
 
     private Vector3 roam;
 
     void Start()
     {
         base.Start();
-        state = EnemyState.PATROL;
+        roam = transform.position;
+        ChangeState(EnemyState.PATROL);
 
     }
 
@@ -44,9 +40,14 @@ public class Spitter : Enemy
         }
         else
         {
-            MoveToAttackRange();
+            MoveToAttackRange("walk");
         }
         
+    }
+
+    public override void DamagePlayer()
+    {
+        throw new System.NotImplementedException();
     }
 
     void Flee()
@@ -54,43 +55,21 @@ public class Spitter : Enemy
         if(Vector3.Distance(target.position, transform.position) < fleeRange)
         {
             Vector3 toPlayer = target.position - transform.position;
-            Move(toPlayer.normalized * -runSpeed);
+            Move(toPlayer.normalized * -runSpeed, "walk");
         }
     }
 
     private void LookAround()
     {
-        if(Vector3.Distance((Vector2)transform.position, (Vector2)roam)< 0.3f)
+        if(Vector3.Distance(transform.position, roam) < 0.1f)
         {
-            Vector3 walkpos = Random.insideUnitCircle * 3/2; 
-            Vector3 newlocation = transform.position + walkpos;
-            roam = (Vector2)newlocation; //world space coordinates
-            Debug.Log("walking towards" + roam);
-            //agent.SetDestination(roam);
+            NewRoamLocation();
         }
-
-        Move(roam);
+        Debug.DrawRay(transform.position, roam - transform.position, Color.cyan);
+        Move(roam, "walk");
     }
 
-    private void MoveToAttackRange()
-    {
-        if(Vector3.Distance(target.position, transform.position) > attackRange)
-        {
-            Move(target.position);
-        }
-    }
-
-    public bool InAttackRange()
-    {
-        float distance = Vector3.Distance(this.transform.position, target.position);
-        if(attackRange >= distance)
-        {
-            return true;
-        }
-        
-        return false;
-    }
-
+    
     void Spits()
     {
         if(attackCooldown >= attackSpeed)
@@ -100,10 +79,14 @@ public class Spitter : Enemy
         }
     }
 
-    void Move(Vector3 location)
+    void NewRoamLocation()
     {
-        Vector3 step = Vector3.MoveTowards(transform.position, location, walkSpeed * Time.fixedDeltaTime);
-        physics.MovePosition(step);
+        Vector3 walkpos = Random.insideUnitCircle;
+        Debug.Log(walkpos);
+        Vector3 newlocation = transform.position + walkpos;
+        roam = newlocation;
+        
+        //Debug.Log($"Walking towards {roam}");
     }
 
     public Quaternion computeAngle()
@@ -113,22 +96,22 @@ public class Spitter : Enemy
         
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Wall")
         {
-            target = other.transform;
-            Debug.Log("Player Detected");
-            ChangeState(EnemyState.ATTACK);
+            //Debug.Log("Bumped Wall");
+            NewRoamLocation();
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    void OnCollisionStay2D(Collision2D other)
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Wall")
         {
-            target = null;
-            ChangeState(EnemyState.PATROL);
+            //Debug.Log("Bumped Wall");
+            NewRoamLocation();
         }
     }
+
 }

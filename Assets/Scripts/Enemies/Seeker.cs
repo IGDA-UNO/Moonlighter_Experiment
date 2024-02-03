@@ -18,4 +18,9 @@ public class Seeker : Enemy
     {
         
     }
+
+    public override void DamagePlayer()
+    {
+        throw new System.NotImplementedException();
+    }
 }
