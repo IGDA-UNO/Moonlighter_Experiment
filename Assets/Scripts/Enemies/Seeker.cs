@@ -9,11 +9,13 @@ public class Seeker : Enemy
     public Transform debugPoint;
 
     Vector3 point;
+    Vector3 dashTarget;
 
     void Start()
     {
         base.Start();
         ChangeState(EnemyState.PATROL);
+        dashTarget = Vector3.zero;
         point = debugPoint.position;
     }
 
@@ -25,13 +27,15 @@ public class Seeker : Enemy
 
     public override void Patrol()
     {
+        dashTarget = Vector3.zero;
         WalkAround();
     }
 
     public override void Attack()
     {
-        //transform.LookAt(target, Vector3.down);
+        //transform.LookAt(target, Vector3.forward);
         LookAtPlayer();
+        Dash();
     }
 
     public void WalkAround()
@@ -57,5 +61,25 @@ public class Seeker : Enemy
     public override void DamagePlayer()
     {
         throw new System.NotImplementedException();
+    }
+
+    void Dash()
+    {
+        Debug.DrawRay(transform.position, dashTarget - transform.position, Color.red);
+        if(Vector3.Distance(transform.position, dashTarget) >= .001 && dashTarget != Vector3.zero)
+        {
+            Move(dashTarget, "run");
+        }
+        else
+        {
+            GetDashTarget();
+        }
+    }
+
+    void GetDashTarget()
+    {
+        Vector3 vector = target.position - transform.position;
+        vector = vector.normalized * 5;
+        dashTarget = target.position + vector;
     }
 }
