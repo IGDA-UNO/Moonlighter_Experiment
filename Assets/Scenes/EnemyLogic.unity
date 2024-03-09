@@ -389,6 +389,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Swamp4-3
       objectReference: {fileID: 0}
+    - target: {fileID: 9175686232693054384, guid: a16982b11b587334c8ee8474fc0fa5d8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9175686232693054399, guid: a16982b11b587334c8ee8474fc0fa5d8, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1020,6 +1024,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da3dbfee61822664f80e16ec901815ca, type: 3}
+--- !u!1001 &3802864609905763837
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2229680853432990375, guid: c15f954404f32684494dac50c7574b4b, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229680853432990375, guid: c15f954404f32684494dac50c7574b4b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229680853432990375, guid: c15f954404f32684494dac50c7574b4b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229680853432990375, guid: c15f954404f32684494dac50c7574b4b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229680853432990375, guid: c15f954404f32684494dac50c7574b4b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229680853432990375, guid: c15f954404f32684494dac50c7574b4b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229680853432990375, guid: c15f954404f32684494dac50c7574b4b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229680853432990375, guid: c15f954404f32684494dac50c7574b4b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229680853432990375, guid: c15f954404f32684494dac50c7574b4b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229680853432990375, guid: c15f954404f32684494dac50c7574b4b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229680853432990375, guid: c15f954404f32684494dac50c7574b4b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849263313792766831, guid: c15f954404f32684494dac50c7574b4b, type: 3}
+      propertyPath: m_Name
+      value: Swamp4_2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c15f954404f32684494dac50c7574b4b, type: 3}
 --- !u!1001 &4463912736892290526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1078,6 +1139,14 @@ PrefabInstance:
     - target: {fileID: 4463912737914084558, guid: 372fe1199d4ab0943a5b582923a68ca1, type: 3}
       propertyPath: m_Name
       value: Seeker
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463912737914084558, guid: 372fe1199d4ab0943a5b582923a68ca1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463912737914084559, guid: 372fe1199d4ab0943a5b582923a68ca1, type: 3}
+      propertyPath: m_Radius
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 372fe1199d4ab0943a5b582923a68ca1, type: 3}
