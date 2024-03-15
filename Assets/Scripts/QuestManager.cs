@@ -5,6 +5,11 @@ using System.Linq;
 using SuperTiled2Unity;
 using UnityEngine;
 
+// Handles adding, removing, reading, and creating Quests.
+/*
+TODO
+    Instantiated objects do not actually appear visible.
+*/
 public class QuestManager : MonoBehaviour
 {
     private List<Quest> quests;
@@ -17,6 +22,7 @@ public class QuestManager : MonoBehaviour
 
     public void AddQuest(Quest newQuest){
         quests.Add(newQuest);
+        Instantiate(newQuest.target);
     }
 
     public void RemoveQuest(Quest questToRemove){

@@ -41,10 +41,10 @@ public class QuestGiver : MonoBehaviour
         switch (isFetch)
         {
             case 0:
-                questManager.AddQuest(new Quest(Quest.QuestType.Fetch, Quest.QuestStatus.Pending));
+                questManager.AddQuest(new Quest(QuestType.Fetch, QuestStatus.Pending));
                 break;
             case 1:
-                questManager.AddQuest(new Quest(Quest.QuestType.Kill, Quest.QuestStatus.Pending));
+                questManager.AddQuest(new Quest(QuestType.Kill, QuestStatus.Pending));
                 break;
             default:
                 Debug.Log("I don't have anything for you...");
