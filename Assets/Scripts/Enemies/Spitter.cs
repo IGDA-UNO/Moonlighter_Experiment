@@ -16,6 +16,7 @@ public class Spitter : Enemy
     void Start()
     {
         base.Start();
+        monsterName = "Spitter";
         roam = transform.position;
         ChangeState(EnemyState.PATROL);
 

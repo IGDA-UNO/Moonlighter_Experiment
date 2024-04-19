@@ -14,6 +14,7 @@ public class Seeker : Enemy
     void Start()
     {
         base.Start();
+        monsterName = "Seeker";
         ChangeState(EnemyState.PATROL);
         dashTarget = Vector3.zero;
         point = debugPoint.position;

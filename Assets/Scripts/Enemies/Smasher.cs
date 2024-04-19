@@ -15,6 +15,7 @@ public class Smasher : Enemy
     void Start()
     {
         base.Start();
+        monsterName = "Smasher";
         ChangeState(EnemyState.PATROL);
         patrolLocations = new List<Vector3>()
         {

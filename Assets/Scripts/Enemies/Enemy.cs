@@ -97,7 +97,7 @@ public abstract class Enemy : MonoBehaviour
         health -= damage;
         if(health <= 0)
         {
-            enemyDies.Invoke();
+            enemyDies.Invoke(monsterName);
             Dies();
         }
     }
