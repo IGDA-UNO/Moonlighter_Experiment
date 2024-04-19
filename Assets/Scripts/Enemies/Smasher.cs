@@ -63,6 +63,11 @@ public class Smasher : Enemy
         throw new System.NotImplementedException();
     }
 
+    public override void Dies()
+    {
+        
+    }
+
     public void Smash()
     {
         if(attackCooldown >= attackSpeed)

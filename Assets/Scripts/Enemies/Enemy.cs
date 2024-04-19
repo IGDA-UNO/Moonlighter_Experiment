@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
+
+[System.Serializable]
+public class EnemyDeath : UnityEvent<string> { }
 
 public abstract class Enemy : MonoBehaviour
 {
@@ -30,6 +34,8 @@ public abstract class Enemy : MonoBehaviour
 
     [Range(0f, 100f)]
     public float attackRange;
+
+    public EnemyDeath enemyDies;
     
 
     // Private
@@ -84,9 +90,16 @@ public abstract class Enemy : MonoBehaviour
 
     public abstract void DamagePlayer();
 
+    public abstract void Dies();
+
     public void TakeDamage(int damage)
     {
         health -= damage;
+        if(health <= 0)
+        {
+            enemyDies.Invoke();
+            Dies();
+        }
     }
 
     public void ChangeState(EnemyState newState)

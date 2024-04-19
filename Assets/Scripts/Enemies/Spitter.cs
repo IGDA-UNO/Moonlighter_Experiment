@@ -50,6 +50,11 @@ public class Spitter : Enemy
         throw new System.NotImplementedException();
     }
 
+    public override void Dies()
+    {
+        
+    }
+
     void Flee()
     {
         if(Vector3.Distance(target.position, transform.position) < fleeRange)

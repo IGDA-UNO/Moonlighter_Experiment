@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9185167853503921877}
   m_Layer: 0
   m_Name: Smasher
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,6 +56,7 @@ MonoBehaviour:
   attackDamage: 25
   attackRange: 0.5
   patrolOffset: 0.315
+  patrolIndex: 0
   patrolLocations: []
 --- !u!50 &7619856003687444893
 Rigidbody2D:

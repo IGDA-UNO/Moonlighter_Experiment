@@ -38,6 +38,11 @@ public class Seeker : Enemy
         Dash();
     }
 
+    public override void Dies()
+    {
+        
+    }
+
     public void WalkAround()
     {
         Debug.DrawRay(transform.position, point - transform.position, Color.cyan);
