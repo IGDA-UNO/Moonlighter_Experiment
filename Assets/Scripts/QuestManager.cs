@@ -7,8 +7,6 @@ using UnityEngine;
 
 // Handles adding, removing, reading, and creating Quests.
 /*
-TODO
-    Instantiated objects do not actually appear visible.
 */
 public class QuestManager : MonoBehaviour
 {
@@ -20,9 +18,21 @@ public class QuestManager : MonoBehaviour
         quests = new List<Quest>();
     }
 
+    void Update()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies){
+            Enemy enemyScript = enemy.GetComponent<Enemy>();
+            enemyScript.enemyDies.AddListener(enemyDeathListener);
+        }
+    }
+
+    private void enemyDeathListener(string enemy){
+        Debug.Log(enemy + "has died!");
+    }
+
     public void AddQuest(Quest newQuest){
         quests.Add(newQuest);
-        Instantiate(newQuest.target);
     }
 
     public void RemoveQuest(Quest questToRemove){
